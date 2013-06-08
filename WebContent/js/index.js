@@ -14,11 +14,32 @@ $(document).ready(function(){
 	}
 
 	function getCurrentDate(){
-		var dt = Date.parse('today');
-		return dt.toString('MMM, dd');
+		//var dt = Date.parse('today');
+		//return dt.toString('MMM, dd');
+		var currentDate = new Date();
+		var day = currentDate.getDate();
+		var month = currentDate.getMonth();
+		var year = currentDate.getFullYear();
+
+		var dateString = month + '/' + day + '/' + year;
+		return dateString;
 
 	}
+	
+	function sendData(spendingCategory, amountSpent, description, dt){
+		   var sendMsg = spendingCategory+","+amountSpent+","+description+","+dt;
+		    alert(sendMsg);
+		    $.ajax({
+		        type: "POST",
+		        url: "HeaderServlet",
+		        data: { message : sendMsg }
+		    		 
+		      }).done(function( msg ) {
+		        alert( "Data Saved: " + msg );
+		      });
+	}
 
+		
 	function formTableRow(spendingCategory, amountSpent,
 		description, dt){
 		var newRow = "<tr><td>" + spendingCategory + "</td><td>" + amountSpent + "</td><td>" 
@@ -34,6 +55,7 @@ $(document).ready(function(){
 
 		var newRow = formTableRow(spendingCategory, amountSpent, description, dt);
 		$('#transaction_table_body').append(newRow);
+		sendData(spendingCategory, amountSpent, description, dt);
 
 	}
 
