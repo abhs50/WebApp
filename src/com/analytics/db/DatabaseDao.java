@@ -12,6 +12,6 @@ public interface DatabaseDao {
 	    * This is the method to be used to create
 	    * a record in the Student table.
 	    */
-	   public void create(String message);
+	   public void createTransaction(String message);
 	   
 }

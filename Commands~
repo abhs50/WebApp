@@ -1,4 +1,4 @@
-.********************************************************************************
+********************************************************************************
 Set Config
 ********************************************************************************
 git config --global user.name "Abhinav Wagle"
@@ -51,7 +51,7 @@ Your branch is ahead of 'origin/master' by 1 commit. -- Indicates you have somet
 *******************************************************************************
 Pushing to Your Remotes from origin { Bad way always push from branch not from origin }
 *******************************************************************************
-git push -u origin master
+git push origin master
 
 
 

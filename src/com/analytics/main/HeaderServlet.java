@@ -40,8 +40,8 @@ public class HeaderServlet extends HttpServlet {
 		
 		ApplicationContext context = 
 	            new ClassPathXmlApplicationContext("Beans.xml");
-		Database dbTemplate = (Database)context.getBean("studentJDBCTemplate");
-		dbTemplate.create(message);
+		Database dbTemplate = (Database)context.getBean("Database");
+		dbTemplate.createTransaction(message);
 	}
 
 }

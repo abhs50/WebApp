@@ -27,7 +27,7 @@ $(document).ready(function(){
 	}
 	
 	function sendData(spendingCategory, amountSpent, description, dt){
-		   var sendMsg = spendingCategory+","+amountSpent+","+description+","+dt;
+		   var sendMsg = dt +"," + spendingCategory+","+amountSpent+","+description+",";
 		    alert(sendMsg);
 		    $.ajax({
 		        type: "POST",
