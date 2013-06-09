@@ -2,6 +2,7 @@ package com.analytics.main;
 
 import java.io.IOException;
 
+
 import java.io.PrintWriter;
 
 import javax.servlet.ServletConfig;
@@ -38,8 +39,8 @@ public class HeaderServlet extends HttpServlet {
 	
 	public void create(String message){
 		
-		ApplicationContext context = 
-	            new ClassPathXmlApplicationContext("Beans.xml");
+	ApplicationContext context = 
+	           new ClassPathXmlApplicationContext("Beans.xml");
 		Database dbTemplate = (Database)context.getBean("Database");
 		dbTemplate.createTransaction(message);
 	}
