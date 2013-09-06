@@ -1,15 +1,15 @@
 delimiter $$
 
-CREATE DATABASE `mydb` /*!40100 DEFAULT CHARACTER SET latin1 */$$
+CREATE DATABASE `mydb`;
 
 delimiter $$
 
 CREATE TABLE `transaction_category` (
-  `idtransactionCategory` int(11) NOT NULL,
+  `idtransactionCategory` int(11) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(45) NOT NULL,
   `categoryInfo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`categoryName`,`idtransactionCategory`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+  PRIMARY KEY (`idtransactionCategory`)
+) ENGINE=InnoDB;
 
 delimiter $$
 
@@ -23,18 +23,25 @@ CREATE TABLE `user` (
   `Age` int(11) DEFAULT NULL,
   `dateOfCreation` date NOT NULL,
   PRIMARY KEY (`emailAddress`,`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+) ENGINE=InnoDB; 
 
 
 delimiter $$
 
 CREATE TABLE `user_transaction` (
-  `iduserTransaction` int(11) NOT NULL,
+  `iduserTransaction` int(11) NOT NULL AUTO_INCREMENT,
   `transactionAmount` decimal(10,2) DEFAULT NULL,
   `transactionDate` date DEFAULT NULL,
   `transactionName` varchar(45) DEFAULT NULL,
   `transactionCategory` int(11) DEFAULT NULL,
   PRIMARY KEY (`iduserTransaction`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+) ENGINE=InnoDB;
 
+
+Insert INTO transaction_category(categoryName,categoryInfo) VALUES("Clothing","Clothing");
+Insert INTO transaction_category(categoryName,categoryInfo) VALUES("Food","Food");
+Insert INTO transaction_category(categoryName,categoryInfo) VALUES("Groceries","Groceries");
+Insert INTO transaction_category(categoryName,categoryInfo) VALUES("Movies","Movies");
+Insert INTO transaction_category(categoryName,categoryInfo) VALUES("Rent","Rent");
+Insert INTO transaction_category(categoryName,categoryInfo) VALUES("Travel","Travel");
 

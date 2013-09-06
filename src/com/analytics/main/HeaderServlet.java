@@ -16,6 +16,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.analytics.db.Database;
+import com.analytics.db.DatabaseDao;
 
 public class HeaderServlet extends HttpServlet {
 	
@@ -38,10 +39,10 @@ public class HeaderServlet extends HttpServlet {
 	}
 	
 	public void create(String message){
-		
-	ApplicationContext context = 
+
+		ApplicationContext context = 
 	           new ClassPathXmlApplicationContext("Beans.xml");
-		Database dbTemplate = (Database)context.getBean("Database");
+		DatabaseDao dbTemplate = (DatabaseDao)context.getBean("DatabaseDao");
 		dbTemplate.createTransaction(message);
 	}
 
